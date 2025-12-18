@@ -40,7 +40,13 @@ def line_chart(x, y, title="", xlabel="", ylabel="", style=None, max_series_poin
         raise ValueError("Too many points for a single line; consider aggregation or sampling")
 
     fig, ax = plt.subplots()
-    ax.plot(x, y, color=s["palette"]["primary"], linewidth=s["lines"]["width"], alpha=s["lines"]["alpha"])
+    ax.plot(
+        x,
+        y,
+        color=s["palette"]["primary"],
+        linewidth=s["lines"]["width"],
+        alpha=s["lines"]["alpha"]
+    )
 
     ax.set_title(title)
     ax.set_xlabel(xlabel)
@@ -122,3 +128,57 @@ def pie_chart(labels, sizes, title="", style=None, max_categories=5, min_distinc
     ax.set_title(title)
 
     return fig, ax
+
+
+def styled_line(x, y, title="", xlabel="", ylabel="", style=None, **kwargs):
+    return line_chart(
+        x,
+        y,
+        title=title,
+        xlabel=xlabel,
+        ylabel=ylabel,
+        style=style,
+        **kwargs
+    )
+
+def styled_bar(categories, values, title="", xlabel="", ylabel="", style=None, **kwargs):
+    return bar_chart(
+        categories,
+        values,
+        title=title,
+        xlabel=xlabel,
+        ylabel=ylabel,
+        style=style,
+        **kwargs
+    )
+
+def styled_scatter(x, y, title="", xlabel="", ylabel="", style=None, **kwargs):
+    return scatter_plot(
+        x,
+        y,
+        title=title,
+        xlabel=xlabel,
+        ylabel=ylabel,
+        style=style,
+        **kwargs
+    )
+
+def styled_hist(data, bins=10, title="", xlabel="", ylabel="Frequency", style=None, **kwargs):
+    return histogram(
+        data,
+        bins=bins,
+        title=title,
+        xlabel=xlabel,
+        ylabel=ylabel,
+        style=style,
+        **kwargs
+    )
+
+def styled_pie(labels, sizes, title="", style=None, **kwargs):
+    return pie_chart(
+        labels,
+        sizes,
+        title=title,
+        style=style,
+        **kwargs
+    )
