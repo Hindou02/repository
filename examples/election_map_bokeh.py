@@ -3,6 +3,7 @@
 import pandas as pd
 import geopandas as gpd
 from bokeh.io import show, output_file
+from bokeh.palettes import Greens9  # ✅ Palette verte
 from pathlib import Path
 
 import myvizlib
@@ -82,9 +83,14 @@ df_agg_2024 = df_elections_2024.groupby(["moughataa", "candidate"], as_index=Fal
 
 
 # -------------------------
-# Carte interactive
+# Carte interactive (palette verte)
 # -------------------------
-layout = myvizlib.styled_election_map_bokeh(gdf_moughataas, df_agg_2024)
+layout = myvizlib.styled_election_map_bokeh(
+    gdf_moughataas,
+    df_agg_2024,
+    palette=Greens9,          # ✅ dégradé de verts
+    reverse_palette=True      # ✅ foncé en haut, clair en bas
+)
 
 # Générer un fichier HTML (car c'est un script, pas un notebook)
 output_file("election_map_bokeh.html", title="Election Map Bokeh - Mauritanie 2024")
