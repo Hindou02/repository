@@ -8,7 +8,17 @@ version = "0.1.0"
 description = "Personal visualization library with consistent style"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = ["matplotlib>=3.7", "numpy>=1.22"]
+dependencies = [
+  "matplotlib>=3.7",
+  "numpy>=1.22"
+]
+
+# Dépendances optionnelles (à installer seulement si on veut la partie cartes Bokeh)
+[project.optional-dependencies]
+maps = [
+  "bokeh>=3.0",
+  "geopandas>=0.14"
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}

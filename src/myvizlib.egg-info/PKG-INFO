@@ -6,6 +6,9 @@ Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 Requires-Dist: matplotlib>=3.7
 Requires-Dist: numpy>=1.22
+Provides-Extra: maps
+Requires-Dist: bokeh>=3.0; extra == "maps"
+Requires-Dist: geopandas>=0.14; extra == "maps"
 
 # myvizlib
 

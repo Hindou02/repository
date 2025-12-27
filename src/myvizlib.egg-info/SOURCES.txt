@@ -1,6 +1,7 @@
 README.md
 pyproject.toml
 src/myvizlib/__init__.py
+src/myvizlib/bokeh_maps.py
 src/myvizlib/charts.py
 src/myvizlib/theme.py
 src/myvizlib.egg-info/PKG-INFO

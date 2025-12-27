@@ -12,6 +12,13 @@ from .charts import (
     styled_pie,
 )
 
+# Partie cartes (optionnelle : nécessite `pip install myvizlib[maps]`)
+try:
+    from .bokeh_maps import styled_election_map_bokeh
+except Exception:
+    styled_election_map_bokeh = None
+
+
 __all__ = [
     "DEFAULT_STYLE",
     "apply_style",
@@ -25,5 +32,5 @@ __all__ = [
     "styled_scatter",
     "styled_hist",
     "styled_pie",
+    "styled_election_map_bokeh",
 ]
-

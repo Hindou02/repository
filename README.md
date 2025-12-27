@@ -10,3 +10,10 @@ from myvizlib import bar_chart, line_chart, scatter_plot, histogram, pie_chart
 
 fig, ax = bar_chart(["North","South","East"], [100, 60, 80], title="Sales by region")
 
+## Interactive maps (GeoPandas + Bokeh)
+
+Install:
+
+```bash
+pip install -e .[maps]
+
